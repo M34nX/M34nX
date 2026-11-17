@@ -60,7 +60,7 @@ directive: understand deeply; create deliberately
 
 <div align="center">
 
-<img width="100%" src="https://raw.githubusercontent.com/M34nX/M34nX/output/github-contribution-grid-snake-dark.svg" alt="Animated contribution snake" />
+<img width="100%" src="https://raw.githubusercontent.com/M34nX/M34nX/main/dist/github-contribution-grid-snake-dark.svg" alt="Animated contribution snake" />
 
 </div>
 
