@@ -12,13 +12,13 @@ required_ids = [
     "repo-list", "languages", "projects-list", "term-form",
     "term-input", "term-output", "themeBtn", "soundBtn", "topBtn",
 ]
-missing = [item for item in required_ids if not re.search(r'id=["\\']' + re.escape(item) + r'["\\']', html)]
+missing = [item for item in required_ids if not re.search(r"""id=["']""" + re.escape(item) + r"""["']""", html)]
 if missing:
     print("FAIL: missing required DOM ids: " + ", ".join(missing))
     sys.exit(1)
 
 modules = re.findall(
-    r'<script\\s+type=["\\']module["\\']\\s*>(.*?)</script>',
+    r"""<script\s+type=["']module["']\s*>(.*?)</script>""",
     html,
     flags=re.IGNORECASE | re.DOTALL,
 )
