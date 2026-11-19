@@ -7,6 +7,12 @@ on:
       - "index.html"
       - "tests/**"
       - ".github/workflows/deploy-pages.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "tests/**"
+      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -45,6 +51,7 @@ jobs:
           path: "."
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
