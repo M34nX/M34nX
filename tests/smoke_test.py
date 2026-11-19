@@ -40,8 +40,10 @@ if check.returncode:
 checks = {
     "public GitHub API integration": "https://api.github.com/users/" in html,
     "safe terminal output escaping": "function escapeHtml" in html,
+    "repository links restricted to the account": "function safeGitHubUrl" in html and html.count("safeGitHubUrl(x.html_url)") == 2,
     "terminal form handling": "term-form').addEventListener('submit'" in html,
-    "reduced-motion support": "prefers-reduced-motion: reduce" in html,
+    "reduced-motion disables canvas animation loops": "if(!reducedMotion)requestAnimationFrame(drawStars)" in html and "if(!reduced)requestAnimationFrame(animate)" in html,
+    "3D canvas supports keyboard rotation": 'tabindex="0"' in html and "ArrowLeft" in html,
     "no embedded personal access token": not re.search(r'gh[pousr]_[A-Za-z0-9]{20,}', html),
 }
 failed = [name for name, passed in checks.items() if not passed]
