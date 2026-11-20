@@ -1,77 +1,72 @@
-<!-- M34nX // DIGITAL EMPIRE -->
+# BlackTermux
+
 <div align="center">
 
-<a href="https://m34nx.github.io/M34nX/">
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:020403,18:052014,48:073b29,78:17102b,100:020403&height=230&section=header&text=M34nX&fontSize=68&fontColor=8CFFB5&animation=twinkling&fontAlignY=36&desc=GHOST%20PROTOCOL%20%2F%2F%20DIGITAL%20EMPIRE&descSize=15&descColor=C7F9D4&descAlignY=59" />
-</a>
+**Your phone. Your Linux.**
 
-<a href="https://m34nx.github.io/M34nX/"><img src="https://img.shields.io/badge/ENTER-THE%20DIGITAL%20EMPIRE-52ff9a?style=for-the-badge&labelColor=050807" alt="Open the interactive website" /></a>
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2200&pause=650&color=52FF9A&center=true&vCenter=true&width=760&lines=%3E+INITIALIZING+GHOST+PROTOCOL...;%3E+IDENTITY%3A+M34nX;%3E+LEARN.+BUILD.+EVOLVE.;%3E+SYSTEM+READY_" alt="Animated terminal" />
+An Android terminal and Linux environment built on the open-source Termux foundation.
 
-<br/>
-<img src="https://komarev.com/ghpvc/?username=M34nX&style=for-the-badge&color=14532d&label=VISITORS" alt="Profile visitors" />
-<img src="https://img.shields.io/github/last-commit/M34nX/M34nX?style=for-the-badge&color=52ff9a&label=LAST%20UPDATE" alt="Last update" />
-<img src="https://img.shields.io/github/actions/workflow/status/M34nX/M34nX/deploy-pages.yml?branch=main&style=for-the-badge&label=DEPLOY" alt="Website deployment status" />
+[![Open the project site](https://img.shields.io/badge/PROJECT%20SITE-BlackTermux-8dffb7?style=for-the-badge&labelColor=080b0a)](https://m34nx.github.io/M34nX/)
+[![Source code](https://img.shields.io/badge/SOURCE-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/M34nX/BlackTermux)
 
 </div>
 
 ---
 
-## ▸ SYSTEM IDENTITY
+## About
 
-Curious by default. Focused on understanding how systems work and building useful things with them.
+BlackTermux is an Android terminal project based on the open-source [Termux application](https://github.com/termux/termux-app). Its purpose is to provide a focused foundation for command-line work, shell scripting, and Linux-style workflows on Android.
 
-- **Interests:** software, Linux, automation, Android, and open source.
-- **Approach:** learn deeply, experiment carefully, improve continuously.
-- **Current direction:** practical tools that solve real problems.
+The long-term direction is to develop meaningful, well-tested BlackTermux-specific improvements and document them transparently.
 
-## ▸ ENTER THE LIVE EXPERIENCE
+## Current state
 
-The interactive experience lives outside the README, where real web technologies can run:
+**Important:** this repository currently contains a Termux-based codebase. The app configuration still uses the Termux application identity (com.termux / Termux), and the current source should not be mistaken for a fully differentiated replacement with independently verified exclusive features.
 
-**[OPEN M34nX DIGITAL EMPIRE ↗](https://m34nx.github.io/M34nX/)**
+The project website describes the direction and the inherited foundation. It does not claim that planned improvements have already shipped.
 
-- Interactive Three.js energy core with pointer/touch rotation
-- Live public GitHub metrics, repository feed, and language footprint
-- Local command terminal with safe built-in commands
-- Three visual palettes, animated starfield, and responsive layout
-- Optional synthesized ambient tone (off by default)
+## Foundation
 
-## ▸ TECH STACK
+The inherited Termux application provides:
 
-<div align="center">
+- An Android terminal application.
+- A Linux command-line environment.
+- Support for shell scripts and command-line development workflows.
+- Integration with the Termux package ecosystem.
 
-<img src="https://skillicons.dev/icons?i=html,css,js,threejs,python,linux,git,github,kotlin&theme=dark&perline=9" alt="Technologies used across my projects" />
+For package availability, Android compatibility, installation guidance, and upstream documentation, consult the [official Termux project](https://github.com/termux/termux-app) and [Termux packages](https://github.com/termux/termux-packages).
 
-</div>
+## Project direction
 
-## ▸ GITHUB TELEMETRY
+- Audit and document the inherited code.
+- Preserve upstream attribution and comply with all applicable licenses.
+- Make BlackTermux-specific changes visible and reviewable.
+- Test builds and changes before describing them as stable.
+- Publish release notes, checksums, and compatibility information for verified releases.
 
-<div align="center">
-  <img height="175" src="https://github-readme-stats.vercel.app/api?username=M34nX&show_icons=true&include_all_commits=true&hide_border=true&rank_icon=github&bg_color=050807&title_color=52ff9a&icon_color=b48cff&text_color=c9e8d5" alt="GitHub statistics" />
-  <img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=M34nX&layout=compact&langs_count=8&hide_border=true&bg_color=050807&title_color=52ff9a&text_color=c9e8d5" alt="Most used languages" />
-</div>
+## Installation and releases
 
-<div align="center">
-  <img width="70%" src="https://streak-stats.demolab.com?user=M34nX&theme=dark&hide_border=true&background=050807&ring=52FF9A&fire=B48CFF&currStreakLabel=8CFFB5" alt="Contribution streak" />
-  <img width="98%" src="https://github-readme-activity-graph.vercel.app/graph?username=M34nX&bg_color=050807&color=8cffb5&line=52ff9a&point=b48cff&area=true&hide_border=true&custom_title=ACTIVITY%20TIMELINE" alt="Contribution activity graph" />
-</div>
+Do not treat an arbitrary debug APK or an upstream Termux build as an official BlackTermux release. A BlackTermux-specific release should be clearly tagged and accompanied by build details, checksums, and installation instructions.
 
-## ▸ FEATURED PROJECT
+Until then, use the official Termux installation guidance rather than downloading APKs from unverified sources.
 
-<div align="center">
-<a href="https://github.com/M34nX/Termux-Shizuku-Bridge">
-<img width="85%" src="https://github-readme-stats.vercel.app/api/pin/?username=M34nX&repo=Termux-Shizuku-Bridge&hide_border=true&bg_color=050807&title_color=52ff9a&text_color=c9e8d5&icon_color=b48cff" alt="Termux Shizuku Bridge repository" />
-</a>
-</div>
+## Contributing
 
-**Termux-Shizuku-Bridge (TSB)** is an open-source, privacy-first toolkit for local Termux and Shizuku diagnostics. It includes a Python CLI and an early-beta Android companion built with Kotlin and Jetpack Compose.
+Issues and focused pull requests are welcome. Please include:
 
-[Repository](https://github.com/M34nX/Termux-Shizuku-Bridge) · [Documentation](https://github.com/M34nX/Termux-Shizuku-Bridge/tree/main/docs) · [Security](https://github.com/M34nX/Termux-Shizuku-Bridge/blob/main/docs/SECURITY.md)
+- A clear description of the problem or proposed improvement.
+- Reproduction steps for bugs.
+- Device and Android version details when relevant.
+- Test results for code changes.
+
+## License and attribution
+
+BlackTermux is based on the Termux codebase. Retain the upstream license notices and comply with the licenses of all included components. See [LICENSE.md](https://github.com/M34nX/BlackTermux/blob/github-releases/v0.118.2/LICENSE.md) and the upstream [Termux repository](https://github.com/termux/termux-app) for source and licensing context.
 
 ---
 
 <div align="center">
-<sub>GHOST PROTOCOL ∞ · LIVE DIGITAL IDENTITY · M34nX</sub>
-<br/><a href="https://github.com/M34nX">SOURCE CODE</a> · <a href="https://m34nx.github.io/M34nX/">LIVE EXPERIENCE</a>
+
+**BLACKTERMUX — BUILT ON OPEN SOURCE. DESIGNED TO EVOLVE.**
+
 </div>
