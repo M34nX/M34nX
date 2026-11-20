@@ -1,10 +1,11 @@
-name: Deploy M34nX Digital Empire
+name: Deploy BlackTermux project site
 
 on:
   push:
     branches: [main]
     paths:
       - "index.html"
+      - "README.md"
       - "tests/**"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
