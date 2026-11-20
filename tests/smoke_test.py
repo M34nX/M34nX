@@ -4,53 +4,33 @@ import subprocess
 import sys
 
 root = Path(__file__).resolve().parents[1]
-html_path = root / "index.html"
-html = html_path.read_text(encoding="utf-8")
-
-required_ids = [
-    "stars", "orb", "repos", "followers", "following", "gists",
-    "repo-list", "languages", "projects-list", "term-form",
-    "term-input", "term-output", "themeBtn", "soundBtn", "topBtn",
-]
-missing = [item for item in required_ids if not re.search(r"""id=["']""" + re.escape(item) + r"""["']""", html)]
+html = (root / "index.html").read_text(encoding="utf-8")
+readme = (root / "README.md").read_text(encoding="utf-8")
+required = ["BlackTermux", "M34nX/BlackTermux", "termux/termux-app", 'id="stars"', 'id="forks"', 'id="issues"', 'id="sync-status"', "prefers-reduced-motion", "aria-label"]
+missing = [item for item in required if item not in html]
 if missing:
-    print("FAIL: missing required DOM ids: " + ", ".join(missing))
+    print("FAIL: missing required site content: " + ", ".join(missing))
     sys.exit(1)
-
-modules = re.findall(
-    r"""<script\s+type=["']module["']\s*>(.*?)</script>""",
-    html,
-    flags=re.IGNORECASE | re.DOTALL,
-)
-if len(modules) != 1:
-    print(f"FAIL: expected exactly one inline module script, found {len(modules)}")
+if "Termux-Shizuku-Bridge" in html or "DIGITAL EMPIRE" in html:
+    print("FAIL: unrelated profile-project content remains in the site")
     sys.exit(1)
-
-check = subprocess.run(
-    ["node", "--check", "--input-type=module"],
-    input=modules[0],
-    text=True,
-    capture_output=True,
-)
+scripts = re.findall(r"<script>(.*?)</script>", html, flags=re.I | re.S)
+if len(scripts) != 1:
+    print(f"FAIL: expected one inline script, found {len(scripts)}")
+    sys.exit(1)
+check = subprocess.run(["node", "--check"], input=scripts[0], text=True, capture_output=True)
 if check.returncode:
-    print("FAIL: JavaScript module syntax check failed")
+    print("FAIL: JavaScript syntax check")
     print(check.stderr)
     sys.exit(check.returncode)
-
-checks = {
-    "public GitHub API integration": "https://api.github.com/users/" in html,
-    "safe terminal output escaping": "function escapeHtml" in html,
-    "terminal form handling": "term-form').addEventListener('submit'" in html,
-    "reduced-motion support": "prefers-reduced-motion: reduce" in html,
-    "no embedded personal access token": not re.search(r'gh[pousr]_[A-Za-z0-9]{20,}', html),
-}
-failed = [name for name, passed in checks.items() if not passed]
-if failed:
-    print("FAIL: " + ", ".join(failed))
+if "M34nX/BlackTermux" not in readme or "termux/termux-app" not in readme or "exclusive features" not in readme:
+    print("FAIL: README must explain the project and current fork status")
     sys.exit(1)
-
-print("PASS: required interface elements")
-print("PASS: JavaScript module syntax")
-for name in checks:
-    print("PASS: " + name)
-print("NOTE: these are static smoke tests; browser rendering and live API behavior still require a real browser.")
+if re.search(r"gh[pousr]_[A-Za-z0-9]{20,}", html + readme):
+    print("FAIL: possible embedded GitHub token")
+    sys.exit(1)
+print("PASS: BlackTermux project identity and links")
+print("PASS: unrelated project sections removed")
+print("PASS: JavaScript syntax")
+print("PASS: current-state transparency")
+print("PASS: no obvious embedded GitHub token")
